@@ -1,0 +1,86 @@
+<!doctype html>
+<html ng-app="App">
+
+<head>
+	<meta charset="utf-8">
+	<title>HBS Client</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<script>
+		document.write("<base href=\"" + document.location + "\" />");
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+	<script src="app.js"></script>
+</head>
+
+<body ng-controller="CustomerCtrl">
+
+	<div class="container">
+		<div class="header clearfix">
+			<nav>
+				<ul class="nav nav-pills pull-right">
+					<li role="presentation" class="active"><a href="#">Home</a>
+					</li>
+					<li role="presentation"><a href="#">About</a>
+					</li>
+					<li role="presentation"><a href="#">Contact</a>
+					</li>
+				</ul>
+			</nav>
+			<h3 class="text-muted">HBS Anjularjs Client</h3>
+		</div>
+
+		<div class="panel panel-default">
+			<h3>Customer List</h3>
+			<table class="table table-bordered">
+				<tr>
+					<td class="field-label col-xs-3 active">
+						<label>Customer ID</label>
+					</td>
+					<td class="field-label col-xs-3 active">
+						<label>Customer Name</label>
+					</td>
+					<td class="field-label col-xs-3 active">
+						<label>url</label>
+					</td>
+				</tr>
+				<tr ng-repeat="customer in customers">
+					<td class="col-md-3">
+						<label>{{customer.customer_id}}</label>
+					</td>
+					<td class="col-md-3">
+						<label>{{customer.customer_name}}</label>
+					</td>
+					<td class="col-md-3">
+						<label>{{customer.url}}</label>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<div class="row marketing">
+			<p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a>
+			</p>
+		</div>
+
+		<footer class="footer">
+			<p>&copy; HBS 2014</p>
+		</footer>
+
+	</div>
+	<!-- /container -->
+
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</html>
