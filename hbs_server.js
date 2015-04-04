@@ -1,15 +1,15 @@
-var hbsextension = require("./hbs_server_extension.js");
 var restify = require('restify');
 var mongojs = require('mongojs');
-//var db = mongojs('mongodb://admin:admin123@ds053718.mongolab.com:53718/restifymyapp', ['products']);
-//var db1=mongojs('mongodb://ismail:open123@localhost/hbs',['customer']);
-//var db1 = mongojs('hbs', ['customer']);
 
-db.on('error',function(err) {
+var db1 = mongojs('hbs', ['customer']);
+
+//database connection error
+db1.on('error',function(err) {
     console.log('database error', err);
 });
 
-db.on('ready',function() {
+//database connection success
+db1.on('ready',function() {
     console.log('database connected');
 });
 
